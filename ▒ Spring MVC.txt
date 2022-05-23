@@ -55,7 +55,7 @@ MVC 인지 아닌지 ? 클라이언트가 진입하는 주소가 어디인지!
    
 
 --------------------------------------------------------------
-■ Spring MVC 프로젝트 실습 01 
+■■■ Spring MVC 프로젝트 실습 01 ■■■
 
 ○ Perspective
    : JavaEE
@@ -77,15 +77,18 @@ MVC 인지 아닌지 ? 클라이언트가 진입하는 주소가 어디인지!
    파일 6 → org.springframework.expression-3.0.2.RELEASE.jar
    파일 7 → org.springframework.jdbc-3.0.2.RELEASE.jar
    파일 8 → org.springframework.tranjection-3.0.2.RELEASE.jar
-   파일 9 → org.springframework.servlet-3.0.2.RELEASE.jar
-   파일 10 → org.springframework.tranjection-3.0.2.RELEASE.jar
+   파일 9 → org.springframework.web.servlet-3.0.2.RELEASE.jar
+   파일 10 → org.springframework.web-3.0.2.RELEASE.jar
+--- 실무에서 기억안나면 libd 확장자 빼고 다 때려 넣어라.
 
 경로2 → C:\s-f-3.0.2-dependencies\org.apache.commons
             \com.springsource.org.apache.commons.logging\1.1.1
    파일11 → com.springsource.org.apache.commons.logging-1.1.1.jar
+--- 스프링은 로그가 기본... 그래서 이건 기본...
 
 경로3 → C:\oraclexe\app\oracle\product\11.2.0\server\jdbc(오라클 설치 경로)
    파일12 → ojdbc6.jar
+--- 오라클 연동하려면...
 
 경로4 → C:\Downloads\15_JSTL\jakarta-taglibs-standard-1.1.2\lib (JSTL 다운로드 경로)
    파일13 → jstl.jar
@@ -93,22 +96,69 @@ MVC 인지 아닌지 ? 클라이언트가 진입하는 주소가 어디인지!
 
 ○ 물리적 파일 구성
    - HelloController.java
+	컨트롤러 구성법(어노테이션 / 컨트롤러 인터페이스 구현)
    - Hello.jsp
-   - dispatcher-servlet.xml
+   - dispatcher-servlet.xml (이제 이름 이걸로만 써야함)
    - web.xml
+   - hello.action
+
+   ※ 『dispatcher-servlet.xml』 파일의 기본 설정 내용(템플릿)을 복사하기 위해 
+      스프링 DOC 의 내용을 참고해서 작성할 수 있도록 한다.
+      경로 → C:\s-f-3.0.2-with-docs\spring-framework-3.0.2.RELEASE
+		\docs\spring-framework-reference\pdf
+      파일 → spring-framework-reference.pdf
+      내용(위치) → 문서 형식상 (425 페이지)
+                    실제 내용상 (450 페이지)
+      해당 위치로 이동하면 XML 파일에 대한 샘플 코드가 있다.
+      이 내용을 복사해서 dispatcher-servlet.xml 파일의 기본 내용으로 작성한다.
 
 ○ 사용자 최초 요청 주소
 http://localhost:8090/mvc01/hello.action
 
 
-워크스페이스
-pre어쩌고 하고 리스타트
+실무가면 STS라는 스프링전용 IDE를 쓴다! 방법은 2가지 사이트에서 다운 (이클립스 STS버전 다운)
+혹은 help에서 STS 치고 플러그인형태로 설치!!
+
+밑에 server 크리에이트 mvc01 추가 ~ 
+server.xml 에서 60번대 줄에서
+<Connector URIEncoding="UTF-8" 
+connectionTimeout="20000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/>
+이렇게 변경(포트번호랑 인코딩!)
 
 
 
 
+※ 우리가 작성한 mvc01 프로젝트의 실행 및 처리 과정 정리
+   
+   ① 외부 요청 
+      http://localhost:8090/mvc01/hello.action
+    
+      → web.xml 관여
+         (→ Front Controller 등록 → DispatcherServlet 등록)
 
+   ② DispatcherServlet 요청 접수
+     
+      → web.xml → DisparcherServlet 등록
+         web.xml → URL 패턴 등록
 
+      → 사용자 요청 분석 → 특정 컨트롤러 지정
+
+   ③ 해당 컨트롤러의 특정 메소드 호출 (액션 처리, ModelAndView 객체 반환)
+   
+      → 사용자의 요청에 맞는 액션 처리
+   
+      → 결과 데이터가 들어있는 모델 객체 준비
+  
+      → 뷰 정보(JSP 페이지 정보) 반환
+
+         ※ JSP 페이지 정보
+            - 여기서는 객체가 아닌 경로 포함된 View 페이지의 이름
+
+    ④ 뷰 페이지에서 최종 웹 페이지를 작성
+ 
+       → JSP 페이지 내에서 EL 이나 JSTL 등의 표기 사용 가능
+
+    ⑤ 응답 완료 ~@!@
 
 
 
