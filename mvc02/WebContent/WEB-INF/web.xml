@@ -16,14 +16,17 @@
 	<!-- ※ Spring MVC Framework 등록 -->
 	<!--    → Front Controller 등록 -->
 	<!--    → DispatcherServlet 객체 등록 -->
+	
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	</servlet>
-	
+	<!-- 톰캣이 웹기반에 요청이 들어왔을 때, 어떻게 해라 ~ 스프링의 영역으로 보기엔
+	     조금 다름...  -->
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>*.do</url-pattern>	
 	</servlet-mapping>
+	
 	
 </web-app>
