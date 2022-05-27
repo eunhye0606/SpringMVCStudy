@@ -357,6 +357,14 @@ connectionTimeout="20000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/>
  
    - EmployeeList.jsp			→ 직원 리스트 출력 페이지.
    - main.css				→ 메인 스타일 구성.
+
+
+   - EmployeeListController.java
+     (employeelist.action)
+
+   - web.xml					→ DispatcherServlet 객체 등록.
+						   URL 매핑 주소 등록.
+   - dispatcher-servlet.xml
    
    - EmployeeInsertForm.jsp		→ 직원 데이터 입력 폼 페이지
 					   AJAX, jQeury 기능 포함.
@@ -404,8 +412,7 @@ connectionTimeout="20000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/>
 
    - ... 중략 ....
 
-   - EmployeeListController.java
-     (employeelist.action)
+  
 
    - EmployeeInsertFormController.java
      (employeeinsertform.java)
@@ -465,8 +472,7 @@ connectionTimeout="20000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/>
 						   의존 객체 주입 설정.
 						   DAO 객체 등록.
 
-   - web.xml					→ DispatcherServlet 객체 등록.
-						   URL 매핑 주소 등록.
+
 
 
 ○ 사용자 최초 요청 주소
