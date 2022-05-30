@@ -369,6 +369,23 @@ connectionTimeout="20000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/>
    - EmployeeInsertForm.jsp		→ 직원 데이터 입력 폼 페이지
 					   AJAX, jQeury 기능 포함.
 
+   - EmployeeInsertFormController.java
+     (employeeinsertform.java)
+
+   - AjaxController.java
+     (ajax.action)
+   - Ajax.jsp				→ AJAX 객체 구성 페이지.
+
+
+
+
+
+
+
+
+
+
+
    - EmployeeUpdateForm.jsp		→ 직원 데이터 수정 폼 페이지
 					   AJAX, jQeury 기능 포함.
 
@@ -398,7 +415,7 @@ connectionTimeout="20000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/>
 
 
 
-   - Ajax.jsp				→ AJAX 객체 구성 페이지.
+
 
    - LoginForm.jsp		   	→ 관리자, 일반사원 로그인 폼 페이지.
 					   ID(employeeId), PW(주민번호 뒤 7자리) 입력.
@@ -414,14 +431,11 @@ connectionTimeout="20000" port="8090" protocol="HTTP/1.1" redirectPort="8443"/>
 
   
 
-   - EmployeeInsertFormController.java
-     (employeeinsertform.java)
+   
    
    - EmployeeInsertController.java
      (employeeinsert.action)
 
-   - AjaxController.java
-     (ajax.action)
 
    - EmployeeUpdateFormController.java
      (employeeupdateform.action)

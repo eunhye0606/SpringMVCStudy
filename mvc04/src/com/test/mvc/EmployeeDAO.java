@@ -227,6 +227,20 @@ public class EmployeeDAO implements IEmployeeDAO
 		Connection conn = dataSource.getConnection();
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
+		/*
+		employee.setName(name);
+		employee.setSsn1(ssn1);
+		employee.setSsn2(ssn2);
+		employee.setBirthday(birthday);
+		employee.setLunar(Integer.parseInt(lunar));
+		employee.setTelephone(telephone);
+		employee.setRegionId(regionId);
+		employee.setDepartmentId(departmentId);
+		employee.setPositionId(positionId);
+		employee.setBasicPay(Integer.parseInt(basicPay));
+		employee.setExtraPay(Integer.parseInt(extraPay));
+		*/
+		
 		
 		pstmt.setString(1, emp.getName());
 		pstmt.setString(2, emp.getSsn1());
@@ -240,7 +254,6 @@ public class EmployeeDAO implements IEmployeeDAO
 		pstmt.setInt(10, Integer.parseInt(emp.getRegionId()));
 		pstmt.setInt(11, emp.getBasicPay());
 		pstmt.setInt(12, emp.getExtraPay());		
-		
 		result = pstmt.executeUpdate();
 		
 		pstmt.close();

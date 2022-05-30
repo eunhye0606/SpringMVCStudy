@@ -814,8 +814,14 @@ SELECT EMPLOYEEID, NAME, SSN1, TO_CHAR(BIRTHDAY, 'YYYY-MM-DD') AS BIRTHDAY, LUNA
 DESC EMPLOYEE;
 
 
+--================================================================================
+DESC EMPLOYEE;
 
+SELECT BASICPAY
+FROM EMPLOYEE;
 
+SELECT *
+FROM POSITION;
 
 
 
