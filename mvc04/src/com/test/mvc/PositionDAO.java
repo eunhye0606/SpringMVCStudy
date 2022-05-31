@@ -22,7 +22,7 @@ public class PositionDAO implements IPositionDAO
 		private DataSource datasource;
 
 	// setter 구성
-	public void setDatasource(DataSource datasource)
+	public void setDataSource(DataSource datasource)
 	{
 		this.datasource = datasource;
 	}
@@ -48,6 +48,8 @@ public class PositionDAO implements IPositionDAO
 			position.setPositionName(rs.getString("POSITIONNAME"));
 			position.setMinBasicPay(rs.getInt("MINBASICPAY"));
 			position.setDelCheck(rs.getInt("DELCHECK"));
+			
+			result.add(position);
 		}
 		rs.close();
 		pstmt.close();

@@ -316,7 +316,7 @@ public class EmployeeDAO implements IEmployeeDAO
 		pstmt.setString(10, emp.getSsn1());
 		pstmt.setString(11, emp.getSsn2());
 		pstmt.setString(12, emp.getSsn2());
-		pstmt.setInt(14, Integer.parseInt(emp.getEmployeeId()));
+		pstmt.setInt(13, Integer.parseInt(emp.getEmployeeId()));
 
 		result = pstmt.executeUpdate();
 		
@@ -355,7 +355,6 @@ public class EmployeeDAO implements IEmployeeDAO
 			result.setSsn1(rs.getString("SSN1"));
 			result.setBirthday(rs.getString("BIRTHDAY"));
 			result.setLunar(rs.getInt("LUNAR"));
-			result.setLunarName(rs.getString("LUNARNAME"));
 			result.setTelephone(rs.getString("TELEPHONE"));
 			result.setDepartmentId(rs.getString("DEPARTMENTID"));
 			result.setPositionId(rs.getString("POSITIONID"));

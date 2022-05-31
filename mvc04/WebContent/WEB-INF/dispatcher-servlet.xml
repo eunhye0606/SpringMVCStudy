@@ -38,6 +38,19 @@
 		<property name="dataSource" ref="localDataSource"></property>
 	</bean>
 	
+	<bean id="regionDAO" class="com.test.mvc.RegionDAO">
+		<property name="dataSource" ref="localDataSource"></property>
+	</bean>
+	
+	<bean id="departmentDAO" class="com.test.mvc.DepartmentDAO">
+		<property name="dataSource" ref="localDataSource"></property>
+	</bean>
+	
+	<bean id="positionDAO" class="com.test.mvc.PositionDAO">
+		<property name="dataSource" ref="localDataSource"></property>
+	</bean>
+	
+	
 	<!-- AJAX 관련 Controller 등록 -->
 	<bean name="/ajax.action" class="com.test.mvc.AjaxController">
 		<property name="dao" ref="employeeDAO"></property>
@@ -47,6 +60,7 @@
 	
 	
 	<!-- Employee 관련 Controller 등록 -->
+	<!-- propert name 은 컨트롤러의 속성. 세터 찾아감.ref는 bean 객체 -->
 	<bean name="/employeelist.action" class="com.test.mvc.EmployeeListController">
 		<property name="dao" ref="employeeDAO"></property>
 	</bean>
@@ -56,6 +70,17 @@
 	</bean>
 	
 	<bean name="/employeeinsert.action" class="com.test.mvc.EmployeeInsertController">
+		<property name="dao" ref="employeeDAO"></property>
+	</bean>
+	
+	<bean name="/employeeupdateform.action" class="com.test.mvc.EmployeeUpdateFormController">
+		<property name="employeeDAO" ref="employeeDAO"></property>
+		<property name="regionDAO" ref="regionDAO"></property>
+		<property name="departmentDAO" ref="departmentDAO"></property>
+		<property name="positionDAO" ref="positionDAO"></property>
+	</bean>
+	
+	<bean name="/employeeupdate.action" class="com.test.mvc.EmployeeUpdateController">
 		<property name="dao" ref="employeeDAO"></property>
 	</bean>
 	

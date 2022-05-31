@@ -36,11 +36,12 @@ public class DepartmentDAO implements IDepartmentDAO
 		ArrayList<Department> result = new ArrayList<Department>();
 		
 		Connection conn = dataSource.getConnection();
-		
+
 		String sql = "SELECT DEPARTMENTID, DEPARTMENTNAME"
 				+ ", DELCHECK"
 				+ " FROM DEPARTMENTVIEW"
 				+ " ORDER BY DEPARTMENTID";
+		
 		
 		
 		
