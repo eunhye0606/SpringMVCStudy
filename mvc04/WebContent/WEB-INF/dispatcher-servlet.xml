@@ -49,10 +49,6 @@
 		<property name="dataSource" ref="localDataSource"></property>
 	</bean>
 	
-<<<<<<< HEAD
-=======
-	
->>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 	<!-- AJAX 관련 Controller 등록 -->
 	<bean name="/ajax.action" class="com.test.mvc.AjaxController">
 		<property name="dao" ref="employeeDAO"></property>
@@ -72,8 +68,6 @@
 	<bean name="/employeeinsert.action" class="com.test.mvc.EmployeeInsertController">
 		<property name="dao" ref="employeeDAO"></property>
 	</bean>
-<<<<<<< HEAD
-=======
 	
 	<bean name="/employeeupdateform.action" class="com.test.mvc.EmployeeUpdateFormController">
 		<property name="employeeDAO" ref="employeeDAO"></property>
@@ -86,7 +80,6 @@
 		<property name="dao" ref="employeeDAO"></property>
 	</bean>
 	
->>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 
 	<bean name="/employeeupdateform.action" class="com.test.mvc.EmployeeUpdateFormController">
 		<property name="employeeDAO" ref="employeeDAO"></property>
