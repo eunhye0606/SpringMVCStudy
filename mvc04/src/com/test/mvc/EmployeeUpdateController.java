@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*=================================================================================================
 	#27. EmployeeUpdateController.java
 	- 사용자 정의 컨트롤러 클래스
@@ -6,11 +7,25 @@
 	  → 인터페이스 형태의 자료형을 속성으로 구성
 	  → setter 메소드 준비
 =================================================================================================*/
+=======
+/* =================================
+	EmployeeUpdateController.java
+	- 사용자 정의 컨트롤러 클래스
+	- 직원 데이터 수정 액션 수행 → employeelist.action 을 다시 요청할 수 있도록 안내
+	- IoC/DI 스프링컨테이너에 의존성 주입하기 위해
+	- DAO 객체에 대한 의존성 주입(DI)을 위한 준비
+	  → 인터페이스 형태의 자료형을 속성으로 구성
+	  → setter 메소드 준비
+================================= */
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 package com.test.mvc;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
+=======
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
@@ -22,6 +37,10 @@ public class EmployeeUpdateController implements Controller
 {
 	private IEmployeeDAO dao;
 	
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 	public void setDao(IEmployeeDAO dao)
 	{
 		this.dao = dao;
@@ -30,6 +49,7 @@ public class EmployeeUpdateController implements Controller
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
+<<<<<<< HEAD
 		// 컨트롤러가 수행하는 액션 코드
 		ModelAndView mav = new ModelAndView();
 		
@@ -49,6 +69,18 @@ public class EmployeeUpdateController implements Controller
 		String name = request.getParameter("name");
 		String ssn1 = request.getParameter("ssn1");
 		String ssn2 = request.getParameter("ssn1");
+=======
+		
+		// 컨트롤러가 수행하는 액션 코드
+		
+		ModelAndView mav = new ModelAndView();
+		
+		// 데이터 수신(EmployeeUpdateForm.jsp(수정폼) 로 부터 넘겨받은 데이터 수신)
+		String employeeId = request.getParameter("employeeId");
+		String name = request.getParameter("name");
+		String ssn1 = request.getParameter("ssn1");
+		String ssn2 = request.getParameter("ssn2");
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 		String birthday = request.getParameter("birthday");
 		String lunar = request.getParameter("lunar");
 		String telephone = request.getParameter("telephone");
@@ -74,6 +106,7 @@ public class EmployeeUpdateController implements Controller
 			employee.setPositionId(positionId);
 			employee.setBasicPay(Integer.parseInt(basicPay));
 			employee.setExtraPay(Integer.parseInt(extraPay));
+<<<<<<< HEAD
 			
 			dao.modify(employee);
 			
@@ -82,6 +115,17 @@ public class EmployeeUpdateController implements Controller
 			//               --------- 안 붙여도 상관 없음
 			//               리다이렉트로 전달하라는 개념을 전달.
 			
+=======
+			//System.out.println(employee);
+			dao.modify(employee);
+			
+			// 이 일은 스프링컨테이너 안에서 일어난다.
+			// 스프링아 ~ 클라이언트가 다시 요청하게끔
+			// 너가 처리해줘 라고 표시하는 것
+			// redirect 안붙혀도 되긴해.
+			// 명시하는 거임. 안붙혀도 다시 요청임.
+			mav.setViewName("redirect:employeelist.action");
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 		} catch (Exception e)
 		{
 			System.out.println(e.toString());
@@ -89,4 +133,8 @@ public class EmployeeUpdateController implements Controller
 		
 		return mav;
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 }

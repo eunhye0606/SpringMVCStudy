@@ -22,7 +22,11 @@ public class PositionDAO implements IPositionDAO
 		private DataSource dataSource;
 
 	// setter 구성
+<<<<<<< HEAD
 	public void setDataSource(DataSource dataSource)
+=======
+	public void setDataSource(DataSource datasource)
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 	{
 		this.dataSource = dataSource;
 	}

@@ -23,7 +23,11 @@ public class RegionDAO implements IRegionDAO
 	private DataSource dataSource;
 	
 	// setter 구성
+<<<<<<< HEAD
 	public void setDataSource(DataSource dataSource)
+=======
+	public void setDataSource(DataSource datasource)
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 	{
 		this.dataSource = dataSource;
 	}
@@ -49,11 +53,19 @@ public class RegionDAO implements IRegionDAO
 		{
 			Region reg = new Region();
 			
+<<<<<<< HEAD
 			reg.setRegionId(rs.getString("REGIONID"));
 			reg.setRegionName(rs.getString("REGIONNAME"));
 			reg.setDelCheck(rs.getInt("DELCHECK"));
 			
 			result.add(reg);
+=======
+			region.setRegionId(rs.getString("REGIONID"));
+			region.setRegionName(rs.getString("REGIONNAME"));
+			region.setDelCheck(rs.getInt("DELCHECK"));
+			
+			result.add(region);
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 		}
 		rs.close();
 		pstmt.close();

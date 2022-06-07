@@ -40,7 +40,11 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 		//alert("확인");
 		
 		//jQuery-UI 캘린더를 불러오는 함수 처리(datepicker())
+<<<<<<< HEAD
 		//dateFormat: "mm/dd/yy" → 라서 5/22/2022 인 거
+=======
+		//dateFormat: "mm/dd/yy" → 라서 5/22/2022 인거
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 		$("#birthday").datepicker(
 		{
 			dateFormat : "yy-mm-dd"
@@ -67,6 +71,11 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 			//alert($("#minBasicPay").val());	//--(x)
 			//alert($("#minBasicPay").text());	//--(o)
 			
+<<<<<<< HEAD
+=======
+			
+			
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 			//테스트
 			//alert("버튼 클릭입니다여.");
 			
@@ -129,10 +138,17 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 </head>
 <body>
 
+<<<<<<< HEAD
 <!--------------------------------
 	#25. EmployeeInsertForm.jsp
 	- 직원 데이터 수정 페이지
 ---------------------------------->
+=======
+<!-- --------------------------
+	#??. EmployeeUpdateForm.jsp
+	- 직원 데이터 수정 페이지
+---------------------------- -->
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 
 <div>
 	<!-- 메뉴 영역 -->
@@ -142,7 +158,11 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 	
 	<!-- 콘텐츠 영역 -->
 	<div id="content">
+<<<<<<< HEAD
 		<h1>[ 직원 변경 ]</h1>
+=======
+		<h1>[직원 변경]</h1>
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 		<hr />
 		
 		<form action="employeeupdate.action" method="post" id="employeeForm">
@@ -152,6 +172,7 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 				<tr>
 					<th>사원번호</th>
 					<td>
+<<<<<<< HEAD
 						<input type="text" id="employeeId" name="employeeId" readonly="readonly"
 						value="${employee.employeeId }"/>
 					</td>
@@ -161,6 +182,18 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 					<th>이름</th>
 					<td>
 						<input type="text" id="name" name="name" 
+=======
+						<input type="text" id="employeeId" name="employeeId" readonly="readonly"/
+						value="${employee.employeeId }">
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<th>이름</th>
+					<td>
+						<input type="text" id="name" name="name"
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 						value="${employee.name }"/>
 					</td>
 				</tr>
@@ -169,7 +202,11 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 					<th>주민번호</th>
 					<td>
 						<input type="text" id="ssn1" name="ssn1" style="width: 100px;"
+<<<<<<< HEAD
 						value="${employee.ssn1 }"/> -
+=======
+						value="${employee.ssn1 }"/>
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 						<input type="password" id="ssn2" name="ssn2" style="width: 110px;"
 						placeholder="뒤 7자리"/>
 					</td>
@@ -186,32 +223,60 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 				<tr>
 					<th>양/음력</th>
 					<td>
+<<<<<<< HEAD
 						<input type="radio" value="0" name="lunar" id="lunar0"
 						${employee.lunar==0 ? "checked=\"checked\"" : "" } >
 						<label for="lunar0">양력</label>
 						<input type="radio" value="1" name="lunar" id="lunar1"
 						${employee.lunar==1 ? "checked=\"checked\"" : "" } >
+=======
+						<input type="radio" id="lunar0" value="0" name="lunar" 
+						${employee.lunar==0 ? "checked=\"checked\"" : "" }/>
+						<label for="lunar0">양력</label>
+						<input type="radio" id="lunar1" value="1" name="lunar"
+						${employee.lunar==1 ? "checked=\"checked\"" : "" }/>
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 						<label for="lunar1">음력</label>
 					</td>
 				</tr>
 				
 				<tr>
+<<<<<<< HEAD
 	            	<th>전화번호</th>
 	                <td>
 		                <input type="tel" id="telephone" name="telephone"
 		                value="${employee.telephone }">
 			        </td>
 		        </tr>
+=======
+					<th>전화번호</th>
+					<td>
+						<input type="tel" id="telephone" name="telephone"
+						value="${employee.telephone }"/>
+					</td>
+					<!-- 컨트롤러에게 데이터 수신 -->
+				</tr>
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 				
 				<tr>
 					<th>지역</th>
 					<td>
 						<select name="regionId" id="regionId">
+<<<<<<< HEAD
 							<c:forEach var="region" items="${regionList }">
 								<option value="${region.regionId }"
 								${employee.regionId == region.regionId ? "selected=\"selected\"" : "" 
 								}>${region.regionName }</option>
 							</c:forEach>
+=======
+							
+							<c:forEach var="region" items="${regionList }">
+								<option value="${region.regionId }"
+								${employee.regionId == region.regionId ? "selected=\" selected\"" : ""
+								}>${region.regionName }</option>
+							</c:forEach>
+							
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 						</select>
 					</td>
 				</tr>
@@ -220,11 +285,21 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 					<th>부서</th>
 					<td>
 						<select name="departmentId" id="departmentId">
+<<<<<<< HEAD
 							<c:forEach var="department" items="${departmentList }">
 								<option value="${department.departmentId }"
 								${employee.departmentId==department.departmentId ? "selected=\"selected\"" : "" 
 								}>${department.departmentName }</option>
 							</c:forEach>
+=======
+							
+							<c:forEach var="department" items="${departmentList }">
+								<option value="${department.departmentId }"
+								${employee.departmentId == department.departmentId ? "selected=\" selected\"" : ""
+								}>${department.departmentName }</option>
+							</c:forEach>
+							
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 						</select>
 					</td>
 				</tr>
@@ -233,9 +308,16 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 					<th>직위</th>
 					<td>
 						<select name="positionId" id="positionId">
+<<<<<<< HEAD
 							<c:forEach var="position" items="${positionList }">
 								<option value="${position.positionId }"
 								${employee.positionId==position.positionId? "selected=\"selected\"" : "" 
+=======
+							
+							<c:forEach var="position" items="${positionList }">
+								<option value="${position.positionId }"
+								${employee.positionId == position.positionId ? "selected=\" selected\"" : ""
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 								}>${position.positionName }</option>
 							</c:forEach>
 						</select>
@@ -255,8 +337,13 @@ $.datepicker.formatDate( "DD, MM d, yy", new Date( 2007, 7 - 1, 14 ), {
 				<tr>
 					<th>수당</th>
 					<td>
+<<<<<<< HEAD
 						<input type="text" id="extraPay" name="extraPay" 
 						value="${employee.extraPay }"/>
+=======
+						<input type="text" id="extraPay" name="extraPay"
+						 value="${employee.extraPay }"/>
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 					</td>
 				</tr>
 				

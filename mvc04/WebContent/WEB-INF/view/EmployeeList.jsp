@@ -14,6 +14,7 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
+<<<<<<< HEAD
 
 	$(function()
 	{
@@ -45,6 +46,34 @@
 
 </script>
 
+=======
+	$(function()
+	{
+		//테스트
+		//alert("확인");
+		
+		// 수정 버튼 클릭 시 액션
+		$(".updateBtn").click(function()
+		{
+			//테스트
+			//alert("수정버튼");
+			
+			$(location).attr("href","employeeupdateform.action?employeeId="+ $(this).val());
+			
+		});
+		
+		// 삭제 버튼 클릭 시 액션
+		$(".deleteBtn").click(function()
+		{
+			//테스트
+			//alert("삭제버튼");
+			$(location).attr("href","employeedeleteform.action?employeeId="+ $(this).val());
+			
+		});
+	});
+	
+</script>
+>>>>>>> 7172f3411ee4395078d2dd857f4c079bf3fac059
 </head>
 <body>
 <!-- --------------------------------------------------------------------------
