@@ -40,6 +40,6 @@
     <delete id="del">
     	DELETE
 		FROM TBL_MEMBERLIST
-		WHERE MID=TO_NUMBER(#{mid})
+		WHERE MID=TO_NUMBER('#{mid}')
     </delete>
 </mapper>
