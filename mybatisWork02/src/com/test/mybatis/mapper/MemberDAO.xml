@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.test.mybatis.IMemberDAO">
+
+	<!-- 
+	<select id="list"></select>
+	        ======
+	        메소드 이름
+	        namespace 는 구현하는 상위 인터페이스
+	        오버라이딩 하는 것과 비슷.
+	<update id=""></update>
+	
+	<delete id=""></delete>
+	
+	<insert id=""></insert>
+	- 파라미터 넘겨줄 때, EL과 비슷한 형태인 #{} 사용.
+	preparedStatement로 됨.
+	제어권을 스프링프레임워크에게
+    -->
+    
+    <select id="list" resultType="com.test.mybatis.MemberDTO">
+    	SELECT MID, NAME, TELEPHONE
+		FROM TBL_MEMBERLIST
+		ORDER BY MID
+    </select>
+    
+    <select id="count" resultType="java.lang.Integer">
+    	SELECT COUNT(*) AS COUNT
+		FROM TBL_MEMBERLIST
+    </select>
+    
+    <insert id="add">
+    	INSERT INTO TBL_MEMBERLIST(MID, NAME, TELEPHONE)
+		VALUES(MEMBERLISTSEQ.NEXTVAL,#{name},#{telephone})
+    </insert>
+    
+    <delete id="del">
+    	DELETE
+		FROM TBL_MEMBERLIST
+		WHERE MID=TO_NUMBER(#{mid})
+    </delete>
+</mapper>
